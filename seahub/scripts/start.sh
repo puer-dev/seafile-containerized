@@ -41,7 +41,7 @@ function start_socat {
         exit
     fi
     echo "Starting socat..."
-    socat -d -d UNIX-LISTEN:/opt/seafile/seafile-server-latest/runtime/seafile.sock,fork,unlink-early TCP:${SEAFILE_SERVER_HOSTNAME}:8001,forever,keepalive,keepidle=10,keepintvl=10,keepcnt=2
+    socat UNIX-LISTEN:/opt/seafile/seafile-server-latest/runtime/seafile.sock,fork,unlink-early TCP:${SEAFILE_SERVER_HOSTNAME}:8001,forever,keepalive,keepidle=10,keepintvl=10,keepcnt=2
     echo "Socat process was stopped. Exiting container..."
 }
 
