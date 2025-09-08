@@ -7,8 +7,8 @@ RUN apt-get update && \
 ENV SEAFILE_VERSION=11.0.13
 
 WORKDIR /tmp
-RUN wget https://raw.githubusercontent.com/haiwen/seafile-docker/master/build/seafile-build.sh
-RUN wget https://raw.githubusercontent.com/haiwen/seafile-docker/master/build/seafile-build.py
+RUN wget https://raw.githubusercontent.com/haiwen/seafile-docker/master/build/seafile_11.0/seafile-build.sh
+RUN wget https://raw.githubusercontent.com/haiwen/seafile-docker/master/build/seafile_11.0/seafile-build.py
 RUN chmod +x ./seafile-build.sh
 RUN ./seafile-build.sh ${SEAFILE_VERSION}
 
