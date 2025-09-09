@@ -2,6 +2,7 @@ version: '3.8'
 services:
   seafile-server:
     build: ../seafile-server/.
+    image: ghcr.io/puer-dev/seafile-server:11.0.13
     volumes:
       - seafile-data:/shared
     environment:
@@ -24,6 +25,7 @@ services:
 
   seahub:
     build: ../seahub/.
+    image: ghcr.io/puer-dev/seahub:11.0.13
     volumes:
       - seafile-data:/shared
       - seahub-avatars:/shared/seafile/seahub-data/avatars
@@ -42,6 +44,7 @@ services:
 
   seahub-media:
     build: ../seahub-media/.
+    image: ghcr.io/puer-dev/seahub-media:11.0.13
     volumes:
       - seahub-avatars:/usr/share/caddy/media/avatars
       - seahub-custom:/usr/share/caddy/media/custom
@@ -75,6 +78,7 @@ services:
 
   seafile-caddy:
     build: ../seafile-caddy/.
+    image: ghcr.io/puer-dev/seafile-caddy:2.8.4
     ports:
       - "8080:80"
     networks:
